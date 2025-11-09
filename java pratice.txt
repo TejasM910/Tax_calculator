@@ -1,0 +1,470 @@
+from scratch
+1.primenumbers with divisible numbers:
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+int n=8;
+int count=0;
+for(int i=1;i<=n;i++){
+  if(n%i==0){
+    count++;
+        System.out.println(i);
+  }
+}
+if(count==2){
+  System.out.println("is a prime number");
+}
+else{
+  System.out.println("not a prime number");
+	for(int i=1;i<n;i++){
+	if(n%1==0){
+system.out.println("divisible by"+i);
+}
+}
+}
+  }
+}
+-----------------------------------------------------------------------------------------------
+2.Sum of all digit until single line:
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc= new Scanner(System.in);
+int n=sc.nextInt();
+int output=0;
+if(n%9==0){
+  output=9;
+}else{
+output=n%9;
+}
+System.out.println(output);
+  }
+}
+----------------------------------------------------------------------------------------------
+3.Reverse a Number and Check Palindrome
+Reverse an integer and check if it’s a palindrome:
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc= new Scanner(System.in);
+int n=sc.nextInt();
+int temp=n;
+int rev=0;
+while(n!=0){
+  int rem=n%10;
+  rev=rev*10+rem;
+  n=n/10;
+}
+// System.out.print(rev);
+
+if(temp==rev){
+  System.out.print("palindrom");
+}
+else{
+  System.out.print("not a palindrome");
+}
+  }
+}
+--------------------------------------------------------------------------------------------------
+4.Find GCD and LCM of Two Numbers
+Use loops and conditionals to compute both GCD and LCM.
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+int n=sc.nextInt();
+int m=sc.nextInt();
+
+int i=n;
+int j=m;
+
+while(m!=0){
+  int rem=n%m;
+  n=m;
+  m=rem;
+}
+
+int gcd=m;
+int lcm=(i*j)/gcd;
+
+System.out.println(gcd);
+System.out.println(lcm);
+  }
+}
+------------------------------------------------------------------------------------------------
+5.Second Largest Element in Array
+Find the second largest number in an array without sorting.
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+int arr[]=new int[n];
+for(int i=0;i<n;i++){
+  arr[i]=sc.nextInt();
+}
+int max1=0;
+int max2=0;
+if(arr[0]>arr[1]){
+  max1=arr[0];
+  max2=arr[1];
+}
+else{
+  max2=arr[0];
+  max1=arr[1];
+}
+for(int i=2;i<arr.length;i++){
+  if(arr[i]>max1){
+    max2=max1;
+    max1=arr[i];
+  }
+  else if(arr[i]>max2&&arr[i]!=max1){
+    max2=arr[i];
+  }
+}
+System.out.print(max2);
+  }
+}
+---------------------------------------------------------------------------------------------------
+7.Remove Duplicates from Array
+Remove duplicate elements from an integer array.
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+Integer arr[]=new Integer[n];
+for(int i=0;i<n;i++){
+  arr[i]=sc.nextInt();
+}
+Set<Integer> set= new LinkedHashSet<>(Arrays.asList(arr));
+System.out.print(set);
+  }
+}
+-----------------------------------------------------------------------------------------------------
+8.Rotate Array by k Positions
+Rotate an array to the right by k positions.
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+Integer arr[]=new Integer[n];
+for(int i=0;i<n;i++){
+  arr[i]=sc.nextInt();
+}
+int k=sc.nextInt();
+List<Integer> set= (Arrays.asList(arr));
+Collections.sort(set);
+Collections.rotate(set,k);
+System.out.print(set);
+
+  }
+}
+------------------------------------------------------------------------------------------------------------
+9.Find Missing Number in Sequence
+Given an array of n-1 numbers from 1 to n, find the missing number.
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+Integer arr[]=new Integer[n];
+for(int i=0;i<n;i++){
+  arr[i]=sc.nextInt();
+}
+int sum1=0;
+for(int i=0;i<n-1;i++){
+  sum1=sum1+arr[i];
+}
+int sum2=n*(n+1)/2;
+int diff=sum2-sum1;
+
+System.out.print(diff);
+
+  }
+}
+-------------------------------------------------------------------------------------------------------------
+10.Check if Array is Sorted
+Determine if an array is sorted in ascending, descending, or unsorted.
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+Integer a[]=new Integer[n];
+for(int i=0;i<n;i++){
+  a[i]=sc.nextInt();
+}
+boolean asc=true;
+boolean desc=true;
+
+for(int i=1;i<n-1;i++){
+  if(a[i]>a[i+1]){
+    asc=false;
+  }
+  else if(a[i]<a[i+1]){
+    desc=false;
+  }
+}
+if(asc==true){
+  System.out.println("the array is asc");
+}
+else if(desc==true){
+  System.out.println("the array is desc");
+}
+else{
+  System.out.println("unsorted");
+}
+  }
+}
+-----------------------------------------------------------------------------
+11.Anagram Checker
+Check if two strings are anagrams of each other.
+ import java.util.*;
+
+public class SumOfDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s1=sc.nextLine();
+        String s2=sc.nextLine();
+        
+        char[] arr1=s1.toCharArray();
+        char[] arr2=s2.toCharArray();
+        
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+        
+        if(Arrays.equals(arr1,arr2)){
+          System.out.println("Anagram");
+        }
+        else{
+          System.out.println("not a anagaram");
+        }
+    }
+}
+--------------------------------------------------------------------------------
+12.Count Vowels and Consonants
+Count the number of vowels and consonants in a string.
+{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s1=sc.nextLine();
+        s1=s1.toLowerCase();
+        int vowels=0,consonents=0;
+        
+        for(int i=0;i<s1.length();i++){
+          char c=s1.charAt(i);
+          if(c>='a'&&c<='z'){
+            if(c=='a'||c=='e'||c=='i'||c=='o'||c=='u'){
+              vowels++;
+            }
+            else{
+              consonents++;
+            }
+          }
+        }
+        System.out.println(vowels);
+        System.out.println(consonents);
+        }
+    }
+---------------------------------------------------------------------------------------
+13.
+Longest Word in a Sentence
+Find the longest word in a given sentence.
+public class SumOfDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s1=sc.nextLine();
+        String words[]=s1.split(" ");
+        String Longest=words[0];
+        for(int i=1;i<words.length;i++){
+          if(words[i].length()>Longest.length()){
+            Longest=words[i];
+          }
+        }
+        System.out.println(Longest);
+}}
+---------------------------------------------------------------------------------------
+14.Check Pangram
+Check if a sentence contains every letter of the alphabet at least once.
+
+public class SumOfDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s1=sc.nextLine();
+        s1=s1.toLowerCase();
+        boolean a[]=new boolean[26];
+        for(int i=0;i<s1.length();i++){
+          char ch=s1.charAt(i);
+          if(ch>='a'&&ch<='z'){
+            a[ch-'a']=true;
+          }
+        }
+        boolean ispan=true;
+        for(Boolean b:a){
+          if(!b){
+            ispan=false;
+            break;
+          }
+        }
+        if(ispan){
+          System.out.println("it is a pangram");
+        }
+        else{
+          System.out.println("its not a pangram");
+        }
+}}
+------------------------------------------------------------------------------------------
+15.
+Toggle Case of Each Character
+Convert uppercase letters to lowercase and vice versa.
+
+import java.util.*;
+
+public class SumOfDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s1=sc.nextLine();
+        StringBuilder r= new StringBuilder();
+        for(int i=0;i<s1.length();i++){
+          char c=s1.charAt(i);
+          if(Character.isUpperCase(c)){
+            r.append(Character.toLowerCase(c));
+          }
+          else if(Character.isLowerCase(c)){
+            r.append(Character.toUpperCase(c));
+          }
+        }
+        System.out.println(r);
+        
+}}
+-----------------------------------------------------------------------------------------------
+16.
+Armstrong Number Checker
+Check if a number is an Armstrong number (e.g., 153 = 1³ + 5³ + 3³).
+
+public class SumOfDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+int i = sc.nextInt();
+int digits=String.valueOf(i).length();
+int temp = i;
+double sum=0;
+while(i>0){
+  int digit=i%10;
+  sum=sum+(Math.pow(digit,digits));
+  i=i/10;
+}
+if(sum==temp){
+  System.out.println("armstrong number");
+}
+else{
+  System.out.println("not an armstrong");
+}
+        
+        
+}}
+---------------------------------------------------------------------------------------------------
+17.
+Generate Fibonacci Series
+Generate the first n numbers in the Fibonacci sequence.
+
+public class SumOfDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+int n = sc.nextInt();
+for (int i=0,a=0,b=1;i<=n;i++){
+  System.out.print(a+" ");
+  int next=a+b;
+  a=b;
+  b=next;
+}
+}
+}
+--------------------------------------------------------------------------------------------------------
+18.Find All Perfect Numbers up to N
+A perfect number is equal to the sum of its proper divisors.
+public class SumOfDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+int n = sc.nextInt();
+int m=sc.nextInt();
+int flag=0;
+
+for(int i=n;i<m;i++){
+  for(int j=2;j<i;j++){
+    if(i%j==0){
+      flag=1;
+      break;
+    }
+  }
+  if(flag==0){
+    System.out.print(i+" ");
+  }
+  flag=0;
+}
+}}
+-----------------------------------------------------------------------------------------------------------
+19.Pascals Traingle 
+
+public class SumOfDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+int n = sc.nextInt();
+for(int i=0;i<n;i++){
+  int number=1;
+  for(int s=0;s<n-i;s++){
+    System.out.print(" ");
+  }
+  for(int j=0;j<=i;j++){
+    System.out.print(number+" ");
+    number=number*(i-j)/(j+1);
+  }
+  System.out.println();
+
+}
+
+}}
+----------------------------------------------------------------------------------------------------------
+20.leader element in the array
+import java.util.*;
+
+public class SumOfDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+int n = sc.nextInt();
+int a[]=new int[n];
+for(int i=0;i<n;i++){
+  a[i]=sc.nextInt();
+}
+int lead=a[n-1];
+ArrayList<Integer> a1=new ArrayList<>();
+for(int i=n-1;i>=0;i--){
+  if(a[i]>lead){
+    a1.add(a[i]);
+    lead=a[i];
+  }
+  
+}
+Collections.reverse(a1);
+for(int x:a1){
+  System.out.println(x);
+}
+
+}
+
+}
+-----------------------------------------------------------------------------------------------------------------
+21.
